@@ -1,0 +1,97 @@
+<div data-role="view" data-title="My Profile" data-layout="welcome" data-model="APP.models.register_profile">
+    <div class="divcenter">
+        <img class="logo" src="kendo/styles/images/logo.png" data-align="middle" /><br />
+        <p style="text-align:center">PROFILE</p>
+    </div>
+    <form enctype="multipart/form-data" method="post" action="">
+        <div class="divcenter">
+
+            <div class="circlediv1" style="width:100px;height:100px">
+                <label for="fileToUpload">Profile Pic</label><br />
+                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
+                <output id="filesInfo"></output>
+                <div class="row">
+                    <input type="submit" value="Upload" />
+                </div>
+            </div>
+            
+   
+    </div>
+    <div class="divcenter">
+              
+            <div style="height:20px">                
+                <input id="name" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Name" /><br />
+            </div>
+            <br />
+            <div style="height:20px">                
+                <input id="email" class="textinput" required="required" style="width:46%;float:right;margin-top:2%" placeholder="Gender" />
+                <input id="datepicker" class="textinput" value="" style="width: 46%;float:right;margin-top:2%" placeholder="DOB" />
+                
+            </div>
+            <br />
+            <div style="height:20px">                
+                <input id="password" class="textinput" required="required" style="margin-top:2%; float:right" placeholder="Mobile No." /><br />
+             </div>
+            <br />
+            <div style="height:20px">                
+                <input id="conf_password" class="textinput" required="required" style="float:right;margin-top:2%" placeholder="Email" />
+            </div>
+            <p class="italictext">
+                Your Information is confidential witk us.Astute Pool use this information
+                 for your security and assistance purposes.
+            </p>
+
+            
+            <div class="loginpagebutton" style="float:left;">
+                <a data-role="button" href="views/login.html">
+                    <img src="kendo/styles/images/exit.jpg" data-align="middle"  />
+                </a>
+            </div>
+            <div class="loginpagebutton" style="float:right;margin-right:15%;">
+                <a data-role="button" href="views/profile_info.html">
+                    <img src="kendo/styles/images/Registericon.jpg" data-align="middle"/>
+                </a>
+
+            </div>
+        
+
+    </div>
+        </form>
+    <script>
+        function fileSelect(evt) {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var files = evt.target.files;
+
+                var result = '';
+                var file;
+                for (var i = 0; file = files[i]; i++) {
+                    // if the file is not an image, continue
+                    if (!file.type.match('image.*')) {
+                        continue;
+                    }
+
+                    reader = new FileReader();
+                    reader.onload = (function (tFile) {
+                        return function (evt) {
+                            var div = document.createElement('div');
+                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
+                            document.getElementById('filesInfo').appendChild(div);
+                        };
+                    }(file));
+                    reader.readAsDataURL(file);
+                }
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+        }
+
+        document.getElementById('filesToUpload').addEventListener('change', fileSelect, false);
+    </script>
+    
+
+
+    
+
+
+
+</div>

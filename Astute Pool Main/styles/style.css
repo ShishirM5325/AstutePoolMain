@@ -1,0 +1,211 @@
+ .logo
+ {
+     width:60%;
+     height:100%;
+     margin-top:2%
+ }
+ 
+ .icon
+ {
+    width:40px;
+    height:40px;
+    margin-top:1.2%;
+    max-width:17%;
+    margin-left:2%
+    
+
+ }
+ .mybutton
+ {
+     
+  
+  border-style: none;
+
+}
+ 
+
+/*textbox with round structure*/
+.css-input
+    { 
+        font-size:16px;
+        border-radius:18px;
+        border-width:3px; 
+        width:80%;
+        margin-right:2%;
+        padding:6px; 
+        border-style:solid; 
+        border-color:#ed8523; 
+        background-color:#ffffff; 
+        
+
+     } 
+
+.textinput
+    { 
+        font-size:12px;
+        border-radius:18px;
+        border-width:2px; 
+        width:95%;
+        margin-right:2%;
+        padding:4px; 
+        border-style:solid; 
+        border-color:#ed8523; 
+        background-color:#ffffff; 
+        
+
+     } 
+		 .css-input:focus 
+         { 
+             outline:none; 
+
+		 } 
+
+         .btn
+          {
+                -webkit-border-radius: 25;
+                -moz-border-radius: 25;
+                 border-radius: 25px;
+                 font-family: Courier New;
+                 color: #ED8323;
+                 font-size: 18px;
+                 padding: 10px;
+                 background: #ffffff;
+                 border: solid #ed8523 3px;
+                 text-decoration: none;
+}
+         .btn1
+          {
+                -webkit-border-radius: 25;
+                -moz-border-radius: 25;
+                 border-radius: 15px;
+                 font-family: Courier New;
+                 color:#ffffff ;
+                 font-size: 18px;
+                 padding: 10px;
+                 background: #ED8323;
+                 border: solid #ed8523 3px;
+                 text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffffff;
+  text-decoration: none;
+}
+/*div with round corner built in home page */
+.customdiv{
+    width: 275px;
+height: 180px;
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+-webkit-border-radius: 25;
+-moz-border-radius: 25;
+border-radius: 25px;
+border: 3px rgb(237,131,35) solid;
+
+
+}
+
+/*div with round corner built as logo with button as click */
+.circlediv{
+height:80px;
+width:80px;
+position:relative;
+display:inline-block ;
+overflow:hidden;
+text-align:center;
+-webkit-border-radius: 40;
+-moz-border-radius: 40;
+border-radius: 40px;
+border: 3px rgb(95, 34, 34) solid;
+
+
+}
+
+.circlediv1{
+width:200px;
+height:200px;
+position:relative;
+display:inline-block ;
+overflow:hidden;
+text-align:center;
+-webkit-border-radius: 100;
+-moz-border-radius: 100;
+border-radius: 100px;
+border: 3px rgb(95, 34, 34) solid;
+
+
+}
+/*Any Div Can Place in center */
+.divcenter
+{
+    display:table;
+    width:100%;
+    
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:2%;
+    padding-right:2%;
+    text-align:center;
+}
+
+.loginpagebutton
+{
+    height:60px;
+    width:60px;
+    float:left;
+    margin-left:10%;
+    background-color:transparent;
+    color:#ED8323;
+    border:none
+}
+
+.smallbutton
+{
+    height:60px;
+    width:60px;
+    float:left;
+    margin-left:10%;
+    background-color:transparent;
+    color:#ED8323;
+    border:none
+}
+
+.largebutton
+{
+    height:100px;
+    width:100px;
+    float:left;
+    margin-left:10%;
+    background-color:transparent;
+    color:#ED8323;
+    border:none;
+    overflow:hidden
+}
+
+.buttonlable
+{
+    font-family:'Century Gothic';
+    font-size:14px;
+    font-weight:600;
+    text-align:center
+}
+
+.plaintext
+{
+    
+    font-family:'Century Gothic';
+    font-size:15px;
+}
+.italictext
+{
+    
+    font-family:'Century Gothic';
+    font-size:12px;
+    font-style:italic;
+    color:#3b3a39;
+    text-align:left;
+    
+}
