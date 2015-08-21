@@ -8,7 +8,7 @@
         <h2 style="text-align:center">Register</h2>
     </div>
     <div class="divcenter">
-        <form>
+        <form id="registration-form" name="registration-form">
             <div style="height:50px">
                 <img class="icon" src="kendo/styles/images/username.jpg" style="float:left" alt="" />
                 <input id="name" class="css-input" required="required" style=" float:right;margin-top:2%" placeholder="Enter your Name" /><br />
@@ -27,7 +27,7 @@
             <br />
             <div style="height:50px">
                 <img class="icon" src="kendo/styles/images/pwdicon.jpg" style="float:left" alt="" />
-                <input type="password"	id="conf_password" class="css-input" required="required" style="float:right;margin-top:2%" placeholder="Confirm Password" />
+                <input type="password"	id="conf_password" name="conf_password" class="css-input" required="required" style="float:right;margin-top:2%" placeholder="Confirm Password" />
             </div>
         
         <br /><br />
@@ -43,6 +43,27 @@
 
             </div>
         </form>
+         <script>
+ 
+      $(document).ready(function(){
+
+          $("#registration-form").kendoValidator({
+              rules: {
+                  verifyPasswords: function(input){
+                     var ret = true;
+                             if (input.is("[name=conf_password]")) {
+                                 ret = input.val() === $("#password").val();
+                             }
+                             return ret;
+                  }
+              },
+              messages: {
+                  verifyPasswords: "Passwords do not match!"
+              }
+          });
+      });
+ 
+    </script>
 
     </div>
 
