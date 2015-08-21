@@ -4,41 +4,92 @@
         <p style="text-align:center">PROFILE</p>
     </div>
     
-    <div id="map" style="height: 50%;">
-    </div>
+   
     <form enctype="multipart/form-data" method="post" action="">
         
     <div class="divcenter">
-             
+             <p style="text-align:center">Current Address</p>
             <div style="height:20px">                
-                <input id="name" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Flat/House/Plot No." /><br />
+                <input id="add1" name="current_add1" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Flat/House/Plot No." /><br />
             </div>
     		
             <div style="height:20px">                
-                <input id="name" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Street/Society/Village" /><br />
+                <input id="name"name="current_add2" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Street/Society/Village" /><br />
             </div>
             
             <br />
             <div id="locationField" style="height:20px">
-      			<input id="autocomplete" class="textinput" placeholder="Enter your address" style=" float:right;margin-top:2%" onFocus="geolocate()" type="text"></input><br /><br />
+      			<input id="autocomplete" name="current_local" class="textinput" placeholder="Enter your address" style=" float:right;margin-top:2%" onFocus="geolocate()" type="text"></input><br /><br />
    			</div>
 
     <div id="address">
       
 	       <div style="height:20px">
-               <input class="field" id="locality" required="required" style="width:47%;float:right;margin-top:2%" placeholder="City" disabled="true"></input>
-   		 		<input class="field" required="required" style="width:46%;float:right;margin-top:2%"placeholder="State" id="administrative_area_level_1" disabled="true"></input>
+               <input class="field" name="current_city" id="locality" required="required" style="width:47%;float:right;margin-top:2%" placeholder="City" disabled="true"></input>
+   		 		<input class="field" name="current_state" required="required" style="width:46%;float:right;margin-top:2%"placeholder="State" id="administrative_area_level_1" disabled="true"></input>
            </div>
       	  
       	  <div style="height:20px">
-               <input class="field" required="required" style=" float:right;margin-top:2%"id="postal_code" placeholder="Pin"  disabled="true"></input>
+               <input class="field" name="current_pin"required="required" style=" float:right;margin-top:2%"id="postal_code" placeholder="Pin"  disabled="true"></input>
 		 </div>
       	  <div style="height:20px">
-               <input class="field" required="required" style=" float:right;margin-top:2%"placeholder="Country" id="country" disabled="true"></input>
+               <input class="field" name="current_count" required="required" style=" float:right;margin-top:2%"placeholder="Country" id="country" disabled="true"></input>
+		  </div><script>
+function FillBilling(f) {
+  if(f.billingtoo.checked == true) {
+    f.permanent_add1.value = f.current_add1.value;
+    f.permanent_add2.value = f.current_add2.value;
+    f.permanent_local.value = f.current_local.value;
+    f.permanent_city.value = f.current_city.value;
+    f.permanent_state.value = f.current_state.value;
+    f.permanent_pin.value = f.current_pin.value;
+    f.permanent_count.value = f.current_count.value;
+  }
+}
+</script>
+
+	<div style="height:20px">
+               
+        <input type="checkbox" id="remeberme" name="billingtoo" onclick="FillBilling(this.form)" style=" float:left;margin-top:2%" checked="checked" role="checkbox" />
+                <label>Permanent Address Same As Current Address</label>
 		  </div>
       	  
 	</div>
+
+
+
+<div class="divcenter" style="margin-top:10%">
+              <p style="text-align:center">Permanent Address</p>
+            <div style="height:20px">                
+                <input id="add1" name="permanent_add1" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Flat/House/Plot No." /><br />
+            </div>
+    		
+            <div style="height:20px">                
+                <input id="name"name="permanent_add2" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Street/Society/Village" /><br />
+            </div>
             
+            <br />
+            <div id="locationField" style="height:20px">
+      			<input id="autocomplete" name="permanent_local" class="textinput" placeholder="Enter your address" style=" float:right;margin-top:2%" onFocus="geolocate()" type="text"></input><br /><br />
+   			</div>
+
+    <div id="address">
+      
+	       <div style="height:20px">
+               <input class="field" name="permanent_city" id="locality" required="required" style="width:47%;float:right;margin-top:2%" placeholder="City" disabled="true"></input>
+   		 		<input class="field" name="permanent_state" required="required" style="width:46%;float:right;margin-top:2%"placeholder="State" id="administrative_area_level_1" disabled="true"></input>
+           </div>
+      	  
+      	  <div style="height:20px">
+               <input class="field" name="permanent_pin"required="required" style=" float:right;margin-top:2%"id="postal_code" placeholder="Pin"  disabled="true"></input>
+		 </div>
+      	  <div style="height:20px">
+               <input class="field" name="permanent_count" required="required" style=" float:right;margin-top:2%"placeholder="Country" id="country" disabled="true"></input>
+		  </div>
+
+
+	
+</ br>
             <div class="loginpagebutton" style="float:left;">
                 <a data-role="button" href="views/login.html">
                     <img src="kendo/styles/images/exit.jpg" data-align="middle"  />
@@ -126,13 +177,5 @@ function geolocate() {
     <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initAutocomplete"
         async defer></script>
     
-<script>
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13
-  });
-  
-    </script>
-   
+
 </div>
