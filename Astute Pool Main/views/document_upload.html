@@ -1,0 +1,59 @@
+<div data-role="view" data-title="My info" data-layout="welcome" data-model="APP.models.profile_info">
+    
+    <div class="divcenter">
+        <img class="logo" src="kendo/styles/images/logo.png" data-align="middle" /><br />
+        <p style="text-align:center">DOCUMENTS</p>
+    </div>
+    
+    <div class="demo-section k-header">
+                    <input name="files" id="files" type="file" />
+                </div>
+     <script>
+                $(document).ready(function() {
+                    $("#files").kendoUpload({
+                        async: {
+                            saveUrl: "save",
+                            removeUrl: "remove",
+                            autoUpload: true
+                        }
+                    });
+                });
+            </script>
+    <div class="divcenter">
+                
+             <div class="circlediv1" style="width:100px;height:100px">
+                <label for="fileToUpload">Profile Pic</label><br />
+                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
+                <output id="filesInfo"></output>
+                <div class="row">
+                    <input type="submit" value="Upload" />
+                </div>
+            </div>       
+	</div>		
+     <div class="divcenter">
+                
+             <div class="circlediv1" style="width:100px;height:100px">
+                <label for="fileToUpload">Profile Pic</label><br />
+                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
+                <output id="filesInfo"></output>
+                <div class="row">
+                    <input type="submit" value="Upload" />
+                </div>
+            </div>       
+	</div>		
+     <div class="divcenter">
+                
+             <div class="circlediv1" style="width:100px;height:100px">
+                <label for="fileToUpload">Profile Pic</label><br />
+                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
+                <output id="filesInfo"></output>
+                <div class="row">
+                    <input type="submit" value="Upload" />
+                </div>
+            </div>  
+         
+         
+         
+	</div>		
+    
+</div>
