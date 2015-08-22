@@ -1,59 +1,142 @@
-<div data-role="view" data-title="My info" data-layout="welcome" data-model="APP.models.profile_info">
+<div data-role="view" data-title="My Document" data-layout="welcome" data-model="APP.models.document_upload">
     
     <div class="divcenter">
         <img class="logo" src="kendo/styles/images/logo.png" data-align="middle" /><br />
         <p style="text-align:center">DOCUMENTS</p>
+         <ul>
+           <li>Only .pdf, .jpeg files are accepted having size not more than 2 MB.</li>
+			<li>Driver’s license is mandatory for vehicle owners/drivers. (Use Other Documents)</li>
+
+         </ul>
     </div>
     
-    <div class="demo-section k-header">
-                    <input name="files" id="files" type="file" />
-                </div>
-     <script>
-                $(document).ready(function() {
-                    $("#files").kendoUpload({
-                        async: {
-                            saveUrl: "save",
-                            removeUrl: "remove",
-                            autoUpload: true
-                        }
-                    });
-                });
-            </script>
+    <form enctype="multipart/form-data" method="post" action="">
     <div class="divcenter">
+                <label for="fileToUpload1">ADDRESS PROOF</label><br />
+             <div  style="width:100px;height:100px;boder-color:red">
                 
-             <div class="circlediv1" style="width:100px;height:100px">
-                <label for="fileToUpload">Profile Pic</label><br />
-                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
-                <output id="filesInfo"></output>
+                <input type="file" required="required" name="filesToUpload1[]" id="filesToUpload1" multiple="multiple" />
+                 <div class="circlediv1" style="width:100px;height:100px">
+                     <output id="files-Info"></output></div>
                 <div class="row">
                     <input type="submit" value="Upload" />
                 </div>
+            </div> 
+        <script>
+        function fileSelect(evt) {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var files = evt.target.files;
+
+                var result = '';
+                var file;
+                for (var i = 0; file = files[i]; i++) {
+                    // if the file is not an image, continue
+                    if (!file.type.match('image.*')) {
+                        continue;
+                    }
+
+                    reader = new FileReader();
+                    reader.onload = (function (tFile) {
+                        return function (evt) {
+                            var div = document.createElement('div');
+                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info').appendChild(div);
+                        };
+                    }(file));
+                    reader.readAsDataURL(file);
+                }
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+        }
+
+        document.getElementById('filesToUpload1').addEventListener('change', fileSelect, false);
+    </script>
+	</div>		
+     <div class="divcenter">
+                <label for="fileToUpload2">ID PROOF</label><br />
+             <div class="circlediv1" style="width:100px;height:100px">
+                
+                <input type="file" required="required" name="filesToUpload2[]" id="filesToUpload2" multiple="multiple" />
+                <output id="files-Info1"></output>
+                <div class="row">
+                    <input type="submit" value="Upload" />
+                </div>
+                 <script>
+        function fileSelect(evt) {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var files = evt.target.files;
+
+                var result = '';
+                var file;
+                for (var i = 0; file = files[i]; i++) {
+                    // if the file is not an image, continue
+                    if (!file.type.match('image.*')) {
+                        continue;
+                    }
+
+                    reader = new FileReader();
+                    reader.onload = (function (tFile) {
+                        return function (evt) {
+                            var div = document.createElement('div');
+                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info1').appendChild(div);
+                        };
+                    }(file));
+                    reader.readAsDataURL(file);
+                }
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+        }
+
+        document.getElementById('filesToUpload2').addEventListener('change', fileSelect, false);
+    </script>
             </div>       
 	</div>		
      <div class="divcenter">
-                
+                 <label for="fileToUpload">DRIVING LICENCE</label><br />
              <div class="circlediv1" style="width:100px;height:100px">
-                <label for="fileToUpload">Profile Pic</label><br />
-                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
-                <output id="filesInfo"></output>
+               
+                <input type="file" name="filesToUpload3[]" id="filesToUpload3" multiple="multiple" />
+                <output id="files-Info2"></output>
                 <div class="row">
                     <input type="submit" value="Upload" />
                 </div>
-            </div>       
-	</div>		
-     <div class="divcenter">
-                
-             <div class="circlediv1" style="width:100px;height:100px">
-                <label for="fileToUpload">Profile Pic</label><br />
-                <input type="file" name="filesToUpload[]" id="filesToUpload" multiple="multiple" />
-                <output id="filesInfo"></output>
-                <div class="row">
-                    <input type="submit" value="Upload" />
-                </div>
+                 <script>
+        function fileSelect(evt) {
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var files = evt.target.files;
+
+                var result = '';
+                var file;
+                for (var i = 0; file = files[i]; i++) {
+                    // if the file is not an image, continue
+                    if (!file.type.match('image.*')) {
+                        continue;
+                    }
+
+                    reader = new FileReader();
+                    reader.onload = (function (tFile) {
+                        return function (evt) {
+                            var div = document.createElement('div');
+                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info2').appendChild(div);
+                        };
+                    }(file));
+                    reader.readAsDataURL(file);
+                }
+            } else {
+                alert('The File APIs are not fully supported in this browser.');
+            }
+        }
+
+        document.getElementById('filesToUpload3').addEventListener('change', fileSelect, false);
+    </script>
             </div>  
          
-         
+        
          
 	</div>		
-    
+    </form>
 </div>
