@@ -1,7 +1,7 @@
 <div data-role="view" data-title="My info" data-layout="welcome" data-model="APP.models.profile_info">
     <div class="divcenter">
         <img class="logo" src="kendo/styles/images/logo.png" data-align="middle" /><br />
-        <p style="text-align:center">PROFILE</p>
+        <p style="text-align:center">CONTACT INFO</p>
     </div>
     
    
@@ -96,10 +96,17 @@ function FillBilling(f) {
       	  <div style="height:20px">
                <input class="field" name="permanent_count" required="required" style=" float:right;margin-top:2%"placeholder="Country" id="country2" disabled="true"></input>
 		  </div>
+			<div style="height:20px">                
+                <input id="Emg_Contact" name="Emg_Name" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Emergency Contact Person's Good Name" /><br />
+            </div>
+			<div style="height:20px">                
+                <input id="Emg_Contact_No" name="Emg_Num" class="textinput" required="required" style=" float:right;margin-top:2%" placeholder="Emergency Contact Mobile No." /><br />
+            </div>
 
-
-	
 </ br>
+
+
+</div>
             <div class="loginpagebutton" style="float:left;">
                 <a data-role="button" href="views/login.html">
                     <img src="kendo/styles/images/exit.jpg" data-align="middle"  />
