@@ -3,7 +3,7 @@
         <img class="logo" src="kendo/styles/images/logo.png" data-align="middle" /><br />
         <p style="text-align:center">PROFILE</p>
     </div>
-    <form enctype="multipart/form-data" method="post" action="">
+    <form id="register_profile"	enctype="multipart/form-data" method="post" action="">
         <div class="divcenter">
 
             <div class="circlediv1" style="width:100px;height:100px">
@@ -25,16 +25,17 @@
             <br />
             <div style="height:20px">
                 <input id="datepicker" class="textinput" value="" style="width: 46%;float:right;margin-top:2%" placeholder="Your first cry (DOB)" />
-                <input id="email" class="textinput" required="required" style="width:46%;float:right;margin-top:2%" placeholder="Beautiful Or Handsome" />
+                <input type="email"	name="email" id="email" class="textinput" required="required" style="width:46%;float:right;margin-top:2%" placeholder="Beautiful Or Handsome" />
                                 
             </div>
             <br />
             <div style="height:20px">                
-                <input id="password" class="textinput" required="required" style="margin-top:2%; float:right" placeholder="Mobile No." /><br />
-             </div>
+                <input type="text"  name="PhoneNumber"	id="PhoneNumber"  class="textinput" required="required" style="margin-top:2%; float:right" placeholder="10-Digit Mobile No."  maxlength="10"/><br />
+            	
+        	</div>
             <br />
             <div style="height:20px">                
-                <input id="conf_password" class="textinput" required="required" style="float:right;margin-top:2%" placeholder="Email" />
+                <input type="email"	id="email" class="textinput" required="required" style="float:right;margin-top:2%" placeholder="Email" disabled="true" />
             </div>
             <p class="italictext">
                 Your Information is confidential witk us.Astute Pool use this information
@@ -87,11 +88,5 @@
 
         document.getElementById('filesToUpload').addEventListener('change', fileSelect, false);
     </script>
-    
-
-
-    
-
-
-
+  
 </div>
