@@ -12,17 +12,53 @@
     
     <form enctype="multipart/form-data" method="post" action="">
     <div class="divcenter">
+     
                 <label for="fileToUpload1">ADDRESS PROOF</label><br />
-             <div  style="width:100px;height:100px;boder-color:red">
-                
+             
+                <div style="float:left; max-width:33%">
                 <input type="file" required="required" name="filesToUpload1[]" id="filesToUpload1" multiple="multiple" />
-                 <div class="circlediv1" style="width:100px;height:100px">
-                     <output id="files-Info"></output></div>
-                <div class="row">
+        </div>
+                 <div class="framediv" style="width:100px;height:100px;overflow:hidden">
+                     <output id="files-Info1"></output>
+        		</div>
+                <div style="float:right; max-width:33%">
                     <input type="submit" value="Upload" />
                 </div>
-            </div> 
-        <script>
+            
+        </div>
+		<div class="divcenter">	
+     
+                <label for="fileToUpload2">ID PROOF</label><br />
+             
+                <div style="float:left; max-width:33%">
+                <input type="file" required="required" name="filesToUpload2[]" id="filesToUpload2" multiple="multiple" />
+        </div>
+                 <div class="framediv" style="width:100px;height:100px;overflow:hidden">
+                     <output id="files-Info2"></output>
+        		</div>
+                <div style="float:right; max-width:33%">
+                    <input type="submit" value="Upload" />
+                </div>
+            
+       
+	</div>	<div class="divcenter">		
+     
+                <label for="fileToUpload3">ADDRESS PROOF</label><br />
+             
+                <div style="float:left; max-width:33%">
+                <input type="file" required="required" name="filesToUpload3[]" id="filesToUpload3" multiple="multiple" />
+        </div>
+                 <div class="framediv" style="width:100px;height:100px;overflow:hidden">
+                     <output id="files-Info3"></output>
+        		</div>
+                <div style="float:right; max-width:33%">
+                    <input type="submit" value="Upload" />
+                </div>
+            
+        
+	</div>		
+    </form>
+<script>
         function fileSelect(evt) {
             if (window.File && window.FileReader && window.FileList && window.Blob) {
                 var files = evt.target.files;
@@ -39,8 +75,8 @@
                     reader.onload = (function (tFile) {
                         return function (evt) {
                             var div = document.createElement('div');
-                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
-                            document.getElementById('files-Info').appendChild(div);
+                            div.innerHTML = '<img  style="width:98px;height:98px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info1').appendChild(div);
                         };
                     }(file));
                     reader.readAsDataURL(file);
@@ -52,17 +88,7 @@
 
         document.getElementById('filesToUpload1').addEventListener('change', fileSelect, false);
     </script>
-	</div>		
-     <div class="divcenter">
-                <label for="fileToUpload2">ID PROOF</label><br />
-             <div class="circlediv1" style="width:100px;height:100px">
-                
-                <input type="file" required="required" name="filesToUpload2[]" id="filesToUpload2" multiple="multiple" />
-                <output id="files-Info1"></output>
-                <div class="row">
-                    <input type="submit" value="Upload" />
-                </div>
-                 <script>
+ <script>
         function fileSelect(evt) {
             if (window.File && window.FileReader && window.FileList && window.Blob) {
                 var files = evt.target.files;
@@ -79,8 +105,8 @@
                     reader.onload = (function (tFile) {
                         return function (evt) {
                             var div = document.createElement('div');
-                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
-                            document.getElementById('files-Info1').appendChild(div);
+                            div.innerHTML = '<img  style="width:98px;height:98px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info2').appendChild(div);
                         };
                     }(file));
                     reader.readAsDataURL(file);
@@ -92,18 +118,7 @@
 
         document.getElementById('filesToUpload2').addEventListener('change', fileSelect, false);
     </script>
-            </div>       
-	</div>		
-     <div class="divcenter">
-                 <label for="fileToUpload">DRIVING LICENCE</label><br />
-             <div class="circlediv1" style="width:100px;height:100px">
-               
-                <input type="file" name="filesToUpload3[]" id="filesToUpload3" multiple="multiple" />
-                <output id="files-Info2"></output>
-                <div class="row">
-                    <input type="submit" value="Upload" />
-                </div>
-                 <script>
+<script>
         function fileSelect(evt) {
             if (window.File && window.FileReader && window.FileList && window.Blob) {
                 var files = evt.target.files;
@@ -120,8 +135,8 @@
                     reader.onload = (function (tFile) {
                         return function (evt) {
                             var div = document.createElement('div');
-                            div.innerHTML = '<img style="width: 90px;" src="' + evt.target.result + '" />';
-                            document.getElementById('files-Info2').appendChild(div);
+                            div.innerHTML = '<img  style="width:98px;height:98px;" src="' + evt.target.result + '" />';
+                            document.getElementById('files-Info3').appendChild(div);
                         };
                     }(file));
                     reader.readAsDataURL(file);
@@ -133,10 +148,4 @@
 
         document.getElementById('filesToUpload3').addEventListener('change', fileSelect, false);
     </script>
-            </div>  
-         
-        
-         
-	</div>		
-    </form>
 </div>
